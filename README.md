@@ -67,6 +67,7 @@ A dummy example is useful for demonstrating integration with the Load Generator 
 
 Create a file called `DummyGenerator.java`:
 
+    import org.apache.commons.lang3.tuple.Pair;
     import co.signal.loadgen.SyntheticLoadGenerator;
 
     public class DummyGenerator implements SyntheticLoadGenerator {
@@ -74,8 +75,8 @@ Create a file called `DummyGenerator.java`:
       public DummyGenerator(String ignored) {}
 
       @Override
-      public String nextMessage() {
-        return "Hey! Dum-dum! You give me gum-gum.";
+      public Pair<String, String> nextMessage() {
+        return Pair.of("Hey! Dum-dum!" , "You give me gum-gum.");
       }
     }
 
